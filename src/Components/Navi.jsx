@@ -16,11 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "../Store/actions/authAction";
 
-const pages = [
-  { link: "/", name: "Ana Sayfa" },
-  { link: "/category/siyaset", name: "Siyaset" },
-  { link: "/category/spor", name: "Spor" },
-];
+const pages = [{ link: "/", name: "Ana Sayfa" }];
 
 export default function Navi() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -180,27 +176,37 @@ export default function Navi() {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                   >
-                    {authItem[0].user.userType.type === "admin" && <MenuItem
-                      onClick={() => {
-                        navigate("/kulkanicilar")
-                      }}
-                    >
-                      <Typography textAlign="center">Kullanıcıları Yönet</Typography>
-                    </MenuItem>}
-                    {authItem[0].user.userType.type === "admin" && <MenuItem
-                      onClick={() => {
-                        navigate("/kategoriyonetim")
-                      }}
-                    >
-                      <Typography textAlign="center">Kategorileri Yönet</Typography>
-                    </MenuItem>}
-                    {authItem[0].user.userType.type === "moderator" && <MenuItem
-                      onClick={() => {
-                        navigate("/haberekle")
-                      }}
-                    >
-                      <Typography textAlign="center">Haber Ekle</Typography>
-                    </MenuItem>}
+                    {authItem[0].user.userType.type === "admin" && (
+                      <MenuItem
+                        onClick={() => {
+                          navigate("/kulkanicilar");
+                        }}
+                      >
+                        <Typography textAlign="center">
+                          Kullanıcıları Yönet
+                        </Typography>
+                      </MenuItem>
+                    )}
+                    {authItem[0].user.userType.type === "admin" && (
+                      <MenuItem
+                        onClick={() => {
+                          navigate("/kategoriyonetim");
+                        }}
+                      >
+                        <Typography textAlign="center">
+                          Kategorileri Yönet
+                        </Typography>
+                      </MenuItem>
+                    )}
+                    {authItem[0].user.userType.type === "moderator" && (
+                      <MenuItem
+                        onClick={() => {
+                          navigate("/haberekle");
+                        }}
+                      >
+                        <Typography textAlign="center">Haber Ekle</Typography>
+                      </MenuItem>
+                    )}
                     <MenuItem
                       onClick={() => {
                         handleCloseUserMenu();
