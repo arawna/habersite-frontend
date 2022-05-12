@@ -27,7 +27,7 @@ export default function CategoryLeaderEditModal({ user }) {
     categoryLeaderService
       .getByUserId({ token: authItem[0].token, userId: user.id })
       .then((res) => {
-        setLeaderCategories(res.data.data.categories);
+        setLeaderCategories(res.data.data);
       });
     categoryService.getCategories().then((res) => {
       setCategories(res.data.data);
@@ -71,7 +71,7 @@ export default function CategoryLeaderEditModal({ user }) {
           <TableBody>
             {leaderCategories.map((category, index) => (
               <TableRow key={index}>
-                <TableCell>{category.name}</TableCell>
+                <TableCell>{category.category.name}</TableCell>
                 <TableCell>
                   <DeleteIcon style={{ color: "red" }} />
                 </TableCell>

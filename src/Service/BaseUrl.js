@@ -1,3 +1,3 @@
-const BaseUrl = "http://localhost:8080";
+const BaseUrl = "https://habersite.herokuapp.com";
 
 module.exports = BaseUrl;

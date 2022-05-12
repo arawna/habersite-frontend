@@ -22,4 +22,7 @@ export default class NewsService {
       values
     );
   }
+  getById(id) {
+    return axios.get(`${BaseUrl}/api/new/getById/${id}`);
+  }
 }

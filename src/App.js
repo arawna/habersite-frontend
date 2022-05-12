@@ -7,6 +7,7 @@ import AdminUsers from "./Pages/AdminUsers";
 import CategoryNews from "./Pages/CategoryNews";
 import HomePage from "./Pages/HomePage";
 import Login from "./Pages/Login";
+import OneNew from "./Pages/OneNew";
 import Register from "./Pages/Register";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/kategoriyonetim" element={<AdminCategories />} />
         <Route path="/haberekle" element={<AddNews />} />
         <Route path="/category/:id" element={<CategoryNews />} />
+        <Route path="/new/:id" element={<OneNew />} />
       </Routes>
     </>
   );
